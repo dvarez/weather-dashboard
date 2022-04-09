@@ -1,0 +1,16 @@
+body {
+    color: blue;
+
+
+}
+
+.nav {
+    background-color: lightgreen;
+    
+}
+
+.row {
+    display: flex;
+
+
+}
