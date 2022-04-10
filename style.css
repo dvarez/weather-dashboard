@@ -4,9 +4,23 @@ body {
 
 }
 
+#header {
+    color: darkgreen;
+
+
+}
+
+#littleBox {
+  border: darkgreen 15px;
+
+}
+
+
+
+
 .nav {
     background-color: lightgreen;
-    
+
 }
 
 .row {

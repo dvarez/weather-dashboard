@@ -14,7 +14,7 @@
 <body>
     <nav>
         <div class="nav-wrapper nav">
-            <a href="#" class="brand-logo">Weather Dashboard</a>
+            <a href="#" class="brand-logo center" id="header">Weather Dashboard</a>
         </div>
 
     </nav>
@@ -23,7 +23,7 @@
         <form>
             <div class="input-field">
                 <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <label class="label-icon" for="search"><i class="material-icons" id="header">search</i></label>
                 <i class="material-icons">close</i>
             </div>
             <div>
@@ -40,9 +40,10 @@
                     <ul>
                         <li>cityname</li>
                         <li>temperature</li>
-                        <li>wind</li>
                         <li>humidity</li>
-                        <li>humidity</li>
+                        <li>windSpeed</li>
+                        <li>UvIndex
+                    </ul>
                     </ul>
                 </span>
             </div>
@@ -59,11 +60,6 @@
     </div>
 
 
-
-
-
-
-
     <div class="row">
         <section>
             <div>
@@ -74,8 +70,8 @@
             </div>
         </section>
 
-        <div class="col s2 ">
-            <div class="card-panel teal">
+        <div class="col s2 " >
+            <div class="card-panel teal" >
                 <span class="white-text">I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively. I am similar to what is called a
                     panel in other frameworks.
