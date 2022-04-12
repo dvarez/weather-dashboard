@@ -7,30 +7,35 @@
 
 
 console.log("hello world")
+var weatherBtn = document.getElementById("searchBtn")
+var requestBtn = document.getElementById("search")
+
+var APIKey = "ad7e308f01fc88ecad0f71475a7096e2"
 
 
-var apiKey = "ad7e308f01fc88ecad0f71475a7096e2"
+function getApi(city) {
+    console.log(city);
+    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city+ "&units=imperial&appid=" + APIKey;;
 
-
-function getApi() {
-    
-    var requestUrl = 'https://openweathermap.org/api/one-call-api';
-  
     fetch(requestUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        for (var i = 0; i < data.length; i++) {
-          var listItem = document.createElement('li');
-          listItem.textContent = data[i].html_url;
-          repoList.appendChild(listItem);
-        }
-      });
-  }
-  
-  
-  
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // for (var i = 0; i < data.length; i++) {
+            //     var listItem = document.createElement('li');
+            //     listItem.textContent = data[i].html_url;
+            //     repoList.appendChild(listItem);
+            // }
+            console.log(data)
+        });
+}
+
+weatherBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    getApi(requestBtn.value);
+})
+
 
 
 
