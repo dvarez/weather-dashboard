@@ -2,7 +2,7 @@
 Weather-dashboard
 This is a weather generating tool for gathering weather data from different cities in the USA. 
 
-The page can be viewed at:  
+The page can be viewed at:  https://dvarez.github.io/weather-dashboard/
 
 
 
