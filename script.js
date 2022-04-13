@@ -15,7 +15,7 @@ var APIKey = "ad7e308f01fc88ecad0f71475a7096e2"
 
 function getApi(city) {
     console.log(city);
-    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city+ "&units=imperial&appid=" + APIKey;;
+    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;;
 
     fetch(requestUrl)
         .then(function (response) {
