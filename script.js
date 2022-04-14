@@ -9,12 +9,15 @@
 console.log("hello world")
 var weatherBtn = document.getElementById("searchBtn")
 var requestBtn = document.getElementById("search")
-
+var cityArray = []
 var APIKey = "ad7e308f01fc88ecad0f71475a7096e2"
 
 
 function getApi(city) {
     console.log(city);
+    cityArray.push(city)
+    localStorage.setItem('city', JSON.stringify(cityArray) );
+
     var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;;
 
     fetch(requestUrl)
@@ -28,6 +31,24 @@ function getApi(city) {
             //     repoList.appendChild(listItem);
             // }
             console.log(data)
+            document.getElementById("cityName").textContent = "city: " + city
+            document.getElementById("temperature").textContent = "temperature: " + data.main.temp
+            document.getElementById("humidity").textContent = "humidity: " + data.main.humidity
+            document.getElementById("windspeed").textContent = "windspeed: " + data.wind.speed
+
+            var dailyUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&exclude=hourly&appid=" + APIKey
+
+            fetch(dailyUrl)
+                .then(function(res) {
+                  return res.json();      
+
+                })
+                .then(function (dailyData) {
+                    console.log(dailyData)
+                    document.getElementById("UvIndex").textContent = "UVIndex: " + dailyData.current.uvi
+
+
+                 })   
         });
 }
 
